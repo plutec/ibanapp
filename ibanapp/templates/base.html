@@ -1,0 +1,45 @@
+
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>IBAN APP</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "/css/bootstrap.min.css" %}" rel="stylesheet">
+
+    <!-- Custom styles -->
+    {% block css %}
+    {% endblock %}
+  </head>
+
+  <body>
+
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+      <h5 class="my-0 mr-md-auto font-weight-normal">IBAN APP</h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="/user">Users</a>
+        <a class="p-2 text-dark" href="/logout">Logout</a>
+      </nav>
+      <a class="btn btn-outline-primary" href="/admin">Administration</a>
+    </div>
+    {% block content %}
+    {% endblock %}
+    
+
+    <!-- JavaScript -->
+    <script src="{% static "/js/jquery-slim.min.js" %}"></script>
+    <script src="{% static "/js/vendor/popper.min.js" %}"></script>
+    <script src="{% static "/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "/js/vendor/holder.min.js" %}"></script>
+
+    <!-- Custom js -->
+    {% block js %}
+    {% endblock %}
+  </body>
+</html>
