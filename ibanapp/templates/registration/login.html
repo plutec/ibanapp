@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <p class="lead"><a href="{% url 'social:begin' 'google-oauth2' %}"><img src="{% static "/img/google_signin_buttons/btn_google_signin_dark_pressed_web.png" %}" /></a><br></p>
+</div>
+{% endblock %}
