@@ -3,3 +3,4 @@
 *.sqlite3
 .vagrant
 .vscode
+local_settings.py
