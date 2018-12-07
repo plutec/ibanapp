@@ -1,3 +1,6 @@
+# pylint: disable-E501
+# pylint: disable=wildcard-import
+# pylint: disable=unused-wildcard-import
 """
 Django settings for ibanapp project.
 
@@ -144,6 +147,6 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_admin')
 
 try:
-    from .local_settings import *
+    from local_settings import *
 except ImportError:
     pass

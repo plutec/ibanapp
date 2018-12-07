@@ -1,7 +1,8 @@
+# pylint: disable=no-member
 from django.test import TestCase
 from django.contrib.auth.models import User
 
-from core.models import Account
+from ibanapp.core.models import Account
 
 class AccountTestCase(TestCase):
     def setUp(self):

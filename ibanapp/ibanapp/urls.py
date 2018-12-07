@@ -17,11 +17,11 @@ from django.contrib import admin
 from django.urls import path, re_path, include
 from django.contrib.auth import views as auth_views
 
-import core.views
+import ibanapp.core.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^$', core.views.index, name='home'),
+    re_path(r'^$', ibanapp.core.views.index, name='home'),
 
     re_path(r'^login/$', auth_views.LoginView.as_view(), name='login'),
     re_path(r'^logout/$', auth_views.LogoutView.as_view(), name='logout'),
