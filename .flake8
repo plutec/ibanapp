@@ -1,0 +1,4 @@
+[flake8]
+ignore =
+  # pylint takes care of these
+  E402, E501, F401, F403, F821, F841

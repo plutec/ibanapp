@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 import ibanapp.core.validators
 
+
 class Account(models.Model):
     created_by = models.ForeignKey(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=30)
