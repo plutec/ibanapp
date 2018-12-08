@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-import ibanapp.core.validators
+import core.validators
 
 
 class Account(models.Model):
@@ -9,4 +9,8 @@ class Account(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     iban = models.CharField(max_length=34,
-                            validators=[ibanapp.core.validators.validate_iban])
+                            validators=[core.validators.validate_iban])
+
+    @property
+    def complete_name(self):
+        return "{} {}".format(self.first_name, self.last_name)

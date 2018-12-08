@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.core.exceptions import ValidationError
 
-from ibanapp.core.validators import validate_iban
+from core.validators import validate_iban
 
 
 class ValidatorTestCase(TestCase):

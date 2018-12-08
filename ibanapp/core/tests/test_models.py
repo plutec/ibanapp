@@ -2,7 +2,7 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
 
-from ibanapp.core.models import Account
+from core.models import Account
 
 
 class AccountTestCase(TestCase):
