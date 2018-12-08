@@ -14,7 +14,7 @@
         <tbody>
             {% for account in accounts %}
             <tr>
-            <th scope="row"><a href="{% url 'edit_account' account.id %}"{{account.id}}</th>
+            <th scope="row"><a href="{% url 'account_edit' account.id %}">{{account.id}}</a></th>
             <td>{{account.complete_name}}</td>
             <td>{{account.iban}}</td>
             <td>{{account.created_by}}</td>
