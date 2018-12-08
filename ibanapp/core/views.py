@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 
@@ -33,3 +33,12 @@ def account_edit(request, account_id):
     else:
         form = AccountForm(instance=account)
     return render(request, 'account_edit.html', {'form': form})
+
+
+@login_required
+def account_delete(request, account_id):
+    account = Account.objects.get(id=account_id)
+    if account.created_by != request.user:
+        return HttpResponse(status=403)
+    account.delete()
+    return redirect('account_list')

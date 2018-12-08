@@ -9,6 +9,7 @@
             <th scope="col">Name</th>
             <th scope="col">IBAN</th>
             <th scope="col">Created by</th>
+            <th scope="col">Want to delete?</th>
           </tr>
         </thead>
         <tbody>
@@ -18,6 +19,7 @@
             <td>{{account.complete_name}}</td>
             <td>{{account.iban}}</td>
             <td>{{account.created_by}}</td>
+            <td>{% if request.user == account.created_by %}<a href="{% url 'account_delete' account.id %}">Delete</a>{% endif %}</td>
             </tr>
             {% endfor %}
         </tbody>
