@@ -27,6 +27,7 @@ urlpatterns = [
 
     re_path(r'^$', core.views.index, name='home'),
     re_path(r'^users/$', core.views.account_list, name='account_list'),
+    re_path(r'^users/add/$', core.views.account_edit, name='account_add'),
     re_path(r'^users/(?P<account_id>\d{1,4})/$', core.views.account_edit, name='account_edit'),
     re_path(r'^users/(?P<account_id>\d{1,4})/delete/$', core.views.account_delete, name='account_delete'),
 ]

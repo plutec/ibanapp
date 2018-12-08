@@ -22,16 +22,27 @@ def account_list(request):
 
 
 @login_required
-def account_edit(request, account_id):
-    account = Account.objects.get(id=account_id)
-    if account.created_by != request.user:
-        return HttpResponse(status=403)
-    if request.POST:
-        form = AccountForm(request.POST or None, instance=account)
-        if form.is_valid():
-            form.save()
+def account_edit(request, account_id=None):
+    if account_id:
+        account = Account.objects.get(id=account_id)
+        if account.created_by != request.user:
+            return HttpResponse(status=403)
+        if request.POST:
+            form = AccountForm(request.POST or None, instance=account)
+            if form.is_valid():
+                form.save()
+        else:
+            form = AccountForm(instance=account)
     else:
-        form = AccountForm(instance=account)
+        if request.POST:
+            form = AccountForm(request.POST or None)
+            if form.is_valid():
+                account_obj = form.save(commit=False)
+                account_obj.created_by = request.user
+                account_obj.save()
+                return redirect('account_edit', account_obj.id)
+        else:
+            form = AccountForm()
     return render(request, 'account_edit.html', {'form': form})
 
 
