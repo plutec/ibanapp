@@ -1,5 +1,8 @@
 # IBANAPP
 
+## Prerequisites
+In order to develop and test this system, **vagrant** and **virtualbox** are required in your host machine.
+
 ## Preparing the environment
 This project uses vagrant to run the test environment, do the following:
 - Join in the project folder
@@ -29,4 +32,4 @@ If you prefer to run the server to check the application manually, you must star
 ```
 python3 manage.py runserver 0.0.0.0:8000
 ```
-And in your local machine, go to http://127.0.0.1:8000 in order to see the result.
+And in your host machine, go to http://127.0.0.1:8000 in order to see the result.
