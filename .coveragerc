@@ -1,2 +1,6 @@
 [run]
 include = ibanapp/*
+omit = ibanapp/ibanapp/wsgi.py
+       ibanapp/manage.py
+       ibanapp/core/apps.py
+       ibanapp/core/migrations/*
