@@ -8,7 +8,7 @@ class ValidatorTestCase(TestCase):
 
     def test_validator_iban_correct(self):
         self.assertEqual(validate_iban("ES1416699352362824876004"),
-                         "ES1416699352362824876004")
+                         None)
 
     def test_validator_iban_incorrect(self):
         with self.assertRaises(ValidationError):

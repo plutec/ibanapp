@@ -4,4 +4,5 @@
 .vagrant
 .vscode
 .tox
+.coverage
 local_settings.py
