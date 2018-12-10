@@ -2,10 +2,10 @@
 
 #General configuration
 apt-get update
-apt-get install -y python3-pip
-apt-get install -y apache2
+apt-get install -y python3-pip python3-dev
 pip3 install --upgrade pip
-pip3 install pipenv
+sudo pip3 install pipenv
 
 # PostgreSQL
-apt-get install -y python3-dev libpq-dev postgresql postgresql-contrib
+apt-get install -y libpq-dev postgresql postgresql-contrib tox
+
